@@ -4,6 +4,7 @@
 namespace controller;
 
 session_start();
+
 use moddel\DBconnection;
 use Model\ProductDB;
 use Model\Product;

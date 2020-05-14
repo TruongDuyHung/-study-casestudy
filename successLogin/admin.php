@@ -1,6 +1,9 @@
 <?php
 session_start();
 include "../view/admin-index.php";
+use controller\Product_Controller;
+use Model\ProductDB;
+use Model\Product;
 ?>
 <!doctype html>
 <html lang="en">

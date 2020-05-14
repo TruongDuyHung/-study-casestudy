@@ -1,5 +1,5 @@
 <?php
-namespace Moddel;
+namespace moddel;
 use PDO;
 class DBconnection
 {
@@ -10,7 +10,6 @@ public function __construct($dns,$user,$password)
     $this->user=$user;
     $this->password=$password;
 }
-
     public function connect()
     {
         try {

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -36,16 +39,16 @@
                 </button>
                 <input type="email" placeholder="Email" name="email" required>
                 <input type="password" placeholder="Password" name="password" required>
-                <input type="submit" value="Login">
+                <input name="request" type="submit" value="Login" required>
             </div>
         </form>
-        <form method="GET">
+        <form method="POST">
             <div class="register-show">
                 <h2>REGISTER</h2>
                 <input type="email" placeholder="Email" name="email1" required>
                 <input type="text" placeholder="Full name" name="fullname" required>
                 <input type="password" placeholder="Password" name="password1" required>
-                <input type="submit" value="Register">
+                <input name="request" type="submit" value="Register" required>
             </div>
         </form>
     </div>

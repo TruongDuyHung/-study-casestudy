@@ -13,7 +13,7 @@
     <div class="main">
         <div class="main-center">
             <h2>Product</h2>
-            <form class="" method="post" action="#">
+            <form class="" method="post" action="../action/add-product.php">
 
                 <div class="form-group">
                     <label for="name">Code</label>

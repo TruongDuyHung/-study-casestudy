@@ -47,4 +47,9 @@ class Product_Controller
     {
         $this->user->deleteDB($code);
     }
+
+    public function add($id,$name,$type,$price)
+    {
+        $this->user->addProduct($id,$name,$type,$price);
+    }
 }

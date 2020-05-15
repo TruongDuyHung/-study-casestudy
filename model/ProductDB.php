@@ -59,4 +59,11 @@ class ProductDB
         $stmt->bindParam(1, $code);
         $stmt->execute();
     }
+
+    public function addProduct($id,$name,$type,$price)
+    {
+        $sql = "INSERT INTO myProducts(productCode, productName, productLine, buyPrice) VALUES ('$id','$name','$type','$price')";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute();
+    }
 }

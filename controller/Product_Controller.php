@@ -1,6 +1,5 @@
 <?php
 
-
 namespace controller;
 
 session_start();
@@ -23,19 +22,26 @@ class Product_Controller
     {
         $products = $this->user->getAllProduct();
         include '../view/list-product.php';
+
+    }
+    public function indexuser()
+    {
+        $products = $this->user->getAllProduct();
+        include '../view/list-product-user.php';
+
     }
 
-//    public function updateProduct($id)
-//    {
-//        include "../view/update-product.php";
-//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-//            $name = $_REQUEST['name'];
-//            $type = $_REQUEST['type'];
-//            $price = $_REQUEST['price'];
-//            $id1 = $id;
-//        }
-//
-//    }
+    public function updateProduct($id)
+    {
+        include "../view/update-product.php";
+        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $name = $_REQUEST['name'];
+            $type = $_REQUEST['type'];
+            $price = $_REQUEST['price'];
+            $id1 = $id;
+        }
+
+    }
 
     public function searchProduct()
     {
@@ -51,5 +57,9 @@ class Product_Controller
     public function add($id,$name,$type,$price)
     {
         $this->user->addProduct($id,$name,$type,$price);
+    }
+    public function addReviews($id,$name,$type,$reviews)
+    {
+        $this->user->addReview($id,$name,$type,$reviews);
     }
 }

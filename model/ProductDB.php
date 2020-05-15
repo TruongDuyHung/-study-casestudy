@@ -23,25 +23,25 @@ class ProductDB
         return $products;
     }
 
-//    public function getProduct($id)
-//    {
-//        $sql = "SELECT productName as Name,productLine as Type,buyPrice as Price FROM myProducts where productCode = ?";
-//        $stmt = $this->connect->prepare($sql);
-//        $stmt->bindParam(1, $id);
-//        $stmt->execute();
-//        $product = $stmt->fetch();
-//    }
+    public function getProduct($id)
+    {
+        $sql = "SELECT productName as Name,productLine as Type,buyPrice as Price FROM myProducts where productCode = ?";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->bindParam(1, $id);
+        $stmt->execute();
+        $product = $stmt->fetch();
+    }
 
-//    public function updateProduct($id)
-//    {
-//        $sql = "update myProducts set productName = ?,productLine= ?,buyPrice = ? where productCode = ?";
-//        $stmt = $this->connect->prepare($sql);
-//        $stmt->bindParam(1, $name);
-//        $stmt->bindParam(1, $type);
-//        $stmt->bindParam(1, $id);
-//        $stmt->bindParam(1, $id);
-//        $stmt->execute();
-//    }
+    public function updateProduct($id)
+    {
+        $sql = "update myProducts set productName = ?,productLine= ?,buyPrice = ? where productCode = ?";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->bindParam(1, $name);
+        $stmt->bindParam(1, $type);
+        $stmt->bindParam(1, $id);
+        $stmt->bindParam(1, $id);
+        $stmt->execute();
+    }
 
     public function search($searchkey)
     {
@@ -66,4 +66,11 @@ class ProductDB
         $stmt = $this->connect->prepare($sql);
         $stmt->execute();
     }
+    public function addReview($id,$name,$type,$review)
+    {
+        $sql = "INSERT INTO usersReviews(Code, Name, Type, Reviews) VALUES ('$id','$name','$type','$review')";
+        $stmt = $this->connect->prepare($sql);
+        $stmt->execute();
+    }
+
 }

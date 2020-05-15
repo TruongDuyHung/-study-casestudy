@@ -18,12 +18,11 @@
     <title>Document</title>
 </head>
 <body class="setbg">
-<div class="container" >
+<div class="container">
     <div class="main">
         <div class="main-center">
             <h2>Product</h2>
-            <form class="" method="post" action="../action/add-product.php">
-
+            <form class="" method="post" action="../action/buy-product.php">
                 <div class="form-group">
                     <label for="name">Code</label>
                     <div class="input-group">
@@ -48,13 +47,13 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="username">Price</label>
+                    <label for="username">Commnent</label>
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                        <input type="text" class="form-control" name="price" placeholder="Enter Product Price"/>
+                        <input type="text" class="form-control" name="reviews" placeholder="Enter your reviews"/>
                     </div>
                 </div>
-                <button type="submit" class="btn-success">ADD</button>
+                <button type="submit" class="btn-success">Buy</button>
 
             </form>
         </div><!--main-center"-->

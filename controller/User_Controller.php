@@ -27,10 +27,11 @@ class User_Controller
                 if (!$result) {
                     $_SESSION['login-fail'] = "Login khong thanh cong";
                     header('location:index.php');
-                } elseif ($email == 'this.mymail9x@gmail.com') {
+                } elseif ($email === 'this.mymail9x@gmail.com') {
                     $_SESSION['successlogin'] = " Welcome ADMIN";
                     header('location:successLogin/admin.php');
                 } else {
+                    $_SESSION['user'] = $email;
                     header('location:successLogin/user.php');
                 }
             }elseif ($_REQUEST['request']=="Register"){

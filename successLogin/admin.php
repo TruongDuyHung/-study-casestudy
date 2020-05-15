@@ -4,7 +4,7 @@ include "../view/admin-index.php";
 include "../controller/Product_Controller.php";
 include "../model/ProductDB.php";
 include "../model/DBconnection.php";
-
+$_SESSION['admin']="admin";
 ?>
 <!doctype html>
 <html lang="en">

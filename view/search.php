@@ -1,12 +1,4 @@
-<?php
-
-use controller\Product_Controller;
-
-if (isset($_REQUEST['keyword'])) {
-    $productController = new Product_Controller();
-    $products = $productController->searchProduct();
-}
-?>
+<?php ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,21 +14,7 @@ if (isset($_REQUEST['keyword'])) {
 <div class="col-md-12">
     <div class="card mt-5">
         <div class="card-header">
-            <div class="row">
-                <div class="col-12 col-md-6">
-                    <h2>List Product</h2>
-                </div>
-                <div class="col-12 col-md-6">
-                    <div>
-                        <form class="form-inline my-2 my-lg-0 " method="GET">
-                            <input class="form-control mr-sm-2" type="search" name="keyword" placeholder="Search"
-                                   aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
+            <h2 style="text-align: center; color: chartreuse">List Product</h2>
         </div>
         <div class="card-body">
             <table class="table">
@@ -50,17 +28,16 @@ if (isset($_REQUEST['keyword'])) {
                 </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($products as $key => $product): ?>
+                <?php foreach ($searchResult as $key => $search): ?>
                     <tr>
-                        <td scope="row"><?php echo $product['ID'] ?></td>
-                        <td><?php echo $product['Name'] ?></td>
-                        <td><?php echo $product['Type'] ?></td>
-                        <td><?php echo $product['Price'] ?></td>
+                        <td scope="row"><?php echo $search['ID'] ?></td>
+                        <td><?php echo $search['Name'] ?></td>
+                        <td><?php echo $search['Type'] ?></td>
+                        <td><?php echo $search['Price'] ?></td>
                         <td>
-                            <a href="../action/delete-product.php?id=<?php echo $product['ID'] ?>"
+                            <a href="../successLogin/listproduct.php?id=<?php echo $search['ID'] ?>"
                                class="btn btn-danger">Delete</a>
-                            <a href="../successLogin/listproduct.php?id=<?php echo $product['ID'] ?>"
-                               class="btn btn-primary">Update</a>
+                            <a href="../successLogin/listproduct.php?id=<?php echo $search['ID'] ?>" class="btn btn-primary">Update</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

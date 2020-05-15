@@ -24,4 +24,27 @@ class Product_Controller
         $products = $this->user->getAllProduct();
         include '../view/list-product.php';
     }
+
+//    public function updateProduct($id)
+//    {
+//        include "../view/update-product.php";
+//        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//            $name = $_REQUEST['name'];
+//            $type = $_REQUEST['type'];
+//            $price = $_REQUEST['price'];
+//            $id1 = $id;
+//        }
+//
+//    }
+
+    public function searchProduct()
+    {
+        $keyword = $_REQUEST['keyword'];
+        return $this->user->search($keyword);
+    }
+
+    public function delete($code)
+    {
+        $this->user->deleteDB($code);
+    }
 }

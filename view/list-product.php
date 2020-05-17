@@ -59,7 +59,7 @@ if (isset($_REQUEST['keyword'])) {
                         <td>
                             <a href="../action/delete-product.php?id=<?php echo $product['ID'] ?>"
                                class="btn btn-danger">Delete</a>
-                            <a href="../successLogin/listproduct.php?id=<?php echo $product['ID'] ?>"
+                            <a href="../action/update-product.php?id=<?php echo $product['ID'] ?>"
                                class="btn btn-primary">Update</a>
                         </td>
                     </tr>

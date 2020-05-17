@@ -24,6 +24,7 @@ class Product_Controller
         include '../view/list-product.php';
 
     }
+
     public function indexuser()
     {
         $products = $this->user->getAllProduct();
@@ -31,16 +32,12 @@ class Product_Controller
 
     }
 
-    public function updateProduct($id)
+    public function getProduct($id)
     {
-        include "../view/update-product.php";
-        if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $name = $_REQUEST['name'];
-            $type = $_REQUEST['type'];
-            $price = $_REQUEST['price'];
-            $id1 = $id;
-        }
 
+        return $this->user->getProduct1($id);
+
+//        include "../view/update-product.php";
     }
 
     public function searchProduct()
@@ -54,12 +51,13 @@ class Product_Controller
         $this->user->deleteDB($code);
     }
 
-    public function add($id,$name,$type,$price)
+    public function add($id, $name, $type, $price)
     {
-        $this->user->addProduct($id,$name,$type,$price);
+        $this->user->addProduct($id, $name, $type, $price);
     }
-    public function addReviews($id,$name,$type,$reviews)
+
+    public function addReviews($id, $name, $type, $reviews)
     {
-        $this->user->addReview($id,$name,$type,$reviews);
+        $this->user->addReview($id, $name, $type, $reviews);
     }
 }

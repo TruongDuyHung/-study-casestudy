@@ -23,13 +23,14 @@ class ProductDB
         return $products;
     }
 
-    public function getProduct($id)
+    public function getProduct1($id)
     {
         $sql = "SELECT productName as Name,productLine as Type,buyPrice as Price FROM myProducts where productCode = ?";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1, $id);
         $stmt->execute();
-        $product = $stmt->fetch();
+        return $stmt->fetch();
+
     }
 
     public function updateProduct($id)

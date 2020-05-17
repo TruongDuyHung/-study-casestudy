@@ -33,14 +33,14 @@ class ProductDB
 
     }
 
-    public function updateProduct($id)
+    public function updateProduct($id,$name,$type,$price)
     {
         $sql = "update myProducts set productName = ?,productLine= ?,buyPrice = ? where productCode = ?";
         $stmt = $this->connect->prepare($sql);
         $stmt->bindParam(1, $name);
-        $stmt->bindParam(1, $type);
-        $stmt->bindParam(1, $id);
-        $stmt->bindParam(1, $id);
+        $stmt->bindParam(2, $type);
+        $stmt->bindParam(3, $price);
+        $stmt->bindParam(4, $id);
         $stmt->execute();
     }
 

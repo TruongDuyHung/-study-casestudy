@@ -40,6 +40,12 @@ class Product_Controller
 //        include "../view/update-product.php";
     }
 
+    public function updateProductToDB($id,$name,$type,$price)
+    {
+        $this->user->updateProduct($id,$name,$type,$price);
+
+    }
+
     public function searchProduct()
     {
         $keyword = $_REQUEST['keyword'];

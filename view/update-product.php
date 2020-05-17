@@ -1,4 +1,6 @@
 <?php
+session_start();
+$_SESSION['idupdate']=$id;
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,7 +21,7 @@
             Product
         </div>
         <div class="card-body">
-            <form method="post">
+            <form method="POST" action="../action/update-productToDB.php">
                 <div class="form-group">
                     <label>Name</label>
                     <input name="name" type="text" value="<?php echo $result['Name'] ?>" class="form-control">
